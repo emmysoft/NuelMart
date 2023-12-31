@@ -1,12 +1,16 @@
 import { ImageBackground, StyleSheet, Text, View, Alert, Pressable } from 'react-native'
 import React, { useState } from 'react'
 import { Ionicons } from "@expo/vector-icons";
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { FIREBASE_AUTH } from '../../firebase';
 
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
 
 const SignUp = ({ navigation }) => {
 
+    const auth = FIREBASE_AUTH;
+        
     const [fullName, setFullName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -15,7 +19,7 @@ const SignUp = ({ navigation }) => {
     const handleSignUp = async (e) => {
         e.preventDefault();
         try {
-            const response = createUserWithEmailandPassword(auth, email, password);
+            const response = createUserWithEmailAndPassword(auth, email, password);
             console.log(response);
             Alert.alert("Welcome")
             navigation.navigate("Home");
@@ -36,7 +40,7 @@ const SignUp = ({ navigation }) => {
                 <Text style={{ color: "#fff", fontWeight: 500, fontSize: 20 }}>SignUp</Text>
                 <View style={styles.inputboxes}>
                     <View style={styles.emailbox}>
-                        <Ionicons name="person" size={32} color={"#b49e81"} style={{ position: "absolute", top: 20, left: -25 }} />
+                        <Ionicons name="person" size={24} color={"#b49e81"} style={{ position: "absolute", top: 20, left: -25 }} />
                         <CustomInput placeholder="Full Name" onChangeText={(text) => setFullName(text)} style={styles.input} value={fullName} type="text" />
                     </View>
                     <View style={styles.emailbox}>
@@ -55,7 +59,7 @@ const SignUp = ({ navigation }) => {
                 </View>
                 <View style={styles.bottomFlex}>
                     <CustomButton style={styles.buttonbody} onPress={handleSignUp}>
-                        <Text style={styles.buttonText}>Register</Text>
+                        Register
                     </CustomButton>
                     <Text onPress={() => navigation.navigate("Login")} style={{ color: "#ff0000", fontWeight: 500, fontSize: 15 }}>
                         Already have an account?
@@ -104,14 +108,14 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
-        gap: 8
+        gap: 15
     },
     passwordbox: {
         display: "flex",
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
-        gap: 8
+        gap: 15
     },
     input: {
         borderRadius: 15,
@@ -133,7 +137,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
-        padding: 20,
+        padding: 10,
         width: 270,
         backgroundColor: "#b49e81",
         borderRadius: 15,

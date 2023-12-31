@@ -21,7 +21,7 @@ const LandingPage = ({ navigation }) => {
                     </Text>
                 </View>
                 <CustomButton style={styles.surroundings} onPress={() => navigation.navigate("Login")}>
-                    <Text style={styles.internal} onPress={() => navigation.navigate("Login")}>Get Started</Text>
+                    Get Started
                     <Ionicons name='arrow-forward' size={24} color={"#000"} />
                 </CustomButton>
             </ImageBackground>

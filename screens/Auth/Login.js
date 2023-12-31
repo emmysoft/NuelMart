@@ -1,6 +1,7 @@
 import { Alert, ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native';
 import React, { useState } from 'react';
 import { Ionicons } from "@expo/vector-icons";
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
@@ -21,7 +22,7 @@ const Login = ({ navigation }) => {
     try {
       const response = await signInWithEmailAndPassword(auth, email, password);
       console.log(response);
-      Alert.alert("Welcome back");
+      Alert.alert("Welcome back dear user");
       navigation.navigate("Home")
     } catch (error) {
       console.log(error)
@@ -53,8 +54,8 @@ const Login = ({ navigation }) => {
               </Pressable>
             </View>
           </View>
-          <CustomButton style={styles.buttonbody}>
-            <Text style={styles.buttonText} onPress={handleLogin}>Login</Text>
+          <CustomButton style={styles.buttonbody} onPress={handleLogin}>
+            Login
           </CustomButton>
 
           <View style={styles.links}>
@@ -127,7 +128,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    padding: 20,
+    padding: 10,
     width: 270,
     backgroundColor: "#b49e81",
     borderRadius: 15,
