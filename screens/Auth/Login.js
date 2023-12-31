@@ -58,7 +58,7 @@ const Login = ({ navigation }) => {
           </CustomButton>
 
           <View style={styles.links}>
-            <Text style={styles.regLink}>Sign up</Text>
+            <Text style={styles.regLink} onPress={() => navigation.navigate("SignUp")}>Sign up</Text>
             <Text style={styles.pwLink}>Forgot Password?</Text>
           </View>
         </ImageBackground>
