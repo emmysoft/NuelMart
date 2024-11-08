@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
         marginTop: 90,
         marginBottom: -200,
         margin: "auto",
-        padding: 20,
+        padding: 10,
     },
     internal: {
         color: "#000",
