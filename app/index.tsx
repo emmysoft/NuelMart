@@ -5,14 +5,16 @@ import { ProductListItem } from '@/components/ProductListItem';
 
 const HomeScreen = () => {
   return (
-    <View>
-      <FlatList
-        data={product}
-        renderItem={({ item }: any) => (
-          <ProductListItem product={item} />
-        )}
-      />
-    </View>
+    <>
+      <View>
+        <FlatList
+          data={product}
+          renderItem={({ item }: any) => (
+            <ProductListItem product={item} />
+          )}
+        />
+      </View>
+    </>
   )
 }
 
