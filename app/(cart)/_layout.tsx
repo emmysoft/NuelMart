@@ -12,4 +12,4 @@ const CartLayout = () => {
   )
 }
 
-export default CartLayout
+export default CartLayout;
