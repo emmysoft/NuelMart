@@ -29,7 +29,7 @@ export default function RootLayout() {
   }
 
   return (
-    <GluestackUIProvider mode={colorScheme === 'dark' ? 'dark' : 'light'}>
+    <GluestackUIProvider mode="light">
       <Stack>
         <Stack.Screen name="index" options={{ title: 'Shop' }} />
         <Stack.Screen name="product/[id]" options={{ title: 'Product' }} />

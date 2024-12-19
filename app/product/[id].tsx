@@ -6,6 +6,7 @@ import { Image } from '@/components/ui/image';
 import { VStack } from '@/components/ui/vstack';
 import { Box } from '@/components/ui/box';
 import { Button, ButtonText } from '@/components/ui/button';
+import products from '../../assets/products.json';
 
 const DetailsScreen = () => {
 
@@ -33,7 +34,7 @@ const DetailsScreen = () => {
                         {product.name}
                     </Text>
                     <VStack className="mb-6">
-                        <Heading size="md" className="mb-4">
+                        <Heading size="md" className="mb-4"> 
                             {product.price}
                         </Heading>
                         <Text size="sm">

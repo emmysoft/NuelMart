@@ -15,8 +15,7 @@ const HomeScreen = () => {
           key={numColumns}
           data={products}
           numColumns={numColumns}
-          contentContainerClassName='gap-2 bg-red-300 max-m-[960px] mx-auto w-full'
-          columnWrapperClassName='gap-2'
+          contentContainerClassName='gap-2 max-w-[960px] mx-auto w-full'
           renderItem={({ item }: any) => (
             <ProductListItem product={item} />
           )}
